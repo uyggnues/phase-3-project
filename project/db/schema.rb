@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(version: 2023_01_23_031348) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "logins", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "caption"
     t.datetime "date"
@@ -43,10 +36,11 @@ ActiveRecord::Schema.define(version: 2023_01_23_031348) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "login_id"
+    t.string "username"
+    t.string "password"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["login_id"], name: "index_users_on_login_id"
   end
 
 end

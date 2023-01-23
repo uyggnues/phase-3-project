@@ -1,16 +1,11 @@
-Login.delete_all
+
 User.delete_all
 Post.delete_all
 Comment.delete_all
 
-puts "creating logins"
-5.times do 
-    Login.create(username: Faker::FunnyName.unique.name, password: Faker::Verb.unique.base)
-end
-
 puts "creating users"
 5.times do
-    User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, login: Login.all.sample)
+    User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::FunnyName.unique.name, password: Faker::Verb.unique.base, email: Faker::GreekPhilosophers.name + "@email.com")
 end
 
 puts "creating posts/comments"
