@@ -14,5 +14,5 @@ end
 use Rack::JSONBodyParser
 
 run ApplicationController
-use LoginController
+use UserController
 use PostController
