@@ -7,33 +7,33 @@ class UserController < Sinatra::Base
         set :views, 'app/views'
     end
 
-    get '/comments' do
-        comment = Comment.all
-        comment.to_json 
+    get '/users' do
+        user = User.all
+        user.to_json 
     end
 
-    get "/comments/:id" do
-        comment = Comment.find_by(id: params[:id])
-        comment .to_json
+    get "/users/:id" do
+        user = User.find_by(id: params[:id])
+        user .to_json
     end
 
-    post '/comments' do
-        comment = Comment.create(params)
-        comment.to_json
+    post '/users' do
+        user = User.create(params)
+        user.to_json
     end
 
     # UPDATE
-    patch '/comments/:id' do
-        comment = Comment.find(params[:id])
-        comment.update(amount: params[:amount])
-        comment.to_json
+    patch '/users/:id' do
+        user = User.find(params[:id])
+        user.update(amount: params[:amount])
+        user.to_json
     end
 
     # DELETE
-    delete '/comments/:id' do
-        comment = Comment.find(params[:id])
-        comment.destroy
-        comment.to_json
+    delete '/users/:id' do
+        user = User.find(params[:id])
+        user.destroy
+        user.to_json
     end
 
 end
