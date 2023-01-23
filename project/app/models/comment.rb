@@ -1,4 +1,9 @@
 class Comment < ActiveRecord::Base
     belongs_to :post
-    belongs_to :user
+    
+
+    def comment(comment)
+        Comment.create(comment: comment, post: post.id, user: user.id)
+    end
+
 end
