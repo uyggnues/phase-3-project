@@ -8,13 +8,12 @@ class PostController < Sinatra::Base
     end
 
     get '/posts' do
-        post = Post.all
-        post.to_json 
+        Post.all.to_json(include: [:comments])
     end
 
-    get "/posts/:id" do
+    get "/posts/:id/comments" do
         post = Post.find_by(id: params[:id])
-        post.to_json
+        post&.comments.to_json
     end
 
     post '/posts' do
