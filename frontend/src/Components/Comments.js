@@ -6,7 +6,7 @@ function Comments({comments, post}){
     })
 
     return(
-        <div className='commentList'>
+        <div className='comments'>
             {display}
         </div>
     )
