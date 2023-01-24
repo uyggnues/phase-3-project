@@ -13,13 +13,13 @@ function Post({post}){
     // "updated_at": "2023-01-23T16:42:24.670Z",
 
     return(
-        <div className="image-card">
+        <div className="post">
             <img className="image" src={post.image} alt="post"/>
             <p>{post.caption}</p>
             <p>Likes: {post.likes}</p>
             <p>Posted: {post.date}</p>
             <h2>Comments:</h2>
-            <Comments comments={post.comments}/>
+            <Comments comments={post.comments} post={post}/>
         </div>
     )
 }
