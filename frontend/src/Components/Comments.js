@@ -1,13 +1,13 @@
-import Comment from './Comment'
+// import Comment from './Comment'
 
 function Comments({comments}){
-    const display = comments.map((comment) => {
-        return <Comment comment={comment}/>
-    })
+    // const display = comments.map((comment) => {
+    //     return <Comment comment={comment}/>
+    // })
 
     return(
         <div className='commentList'>
-            {display}
+            {/* {display} */}
         </div>
     )
 }

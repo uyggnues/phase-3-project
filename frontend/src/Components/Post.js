@@ -14,7 +14,7 @@ function Post({post}){
 
     return(
         <div className="image-card">
-            <img className="image" src={post.image} alt="post"/>
+            {/* <img className="image" src={post.image} alt="post"/> */}
             <p>{post.caption}</p>
             <p>Likes: {post.likes}</p>
             <p>Posted: {post.date}</p>
