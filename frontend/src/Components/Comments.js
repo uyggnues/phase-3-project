@@ -1,12 +1,12 @@
 import Comment from './Comment'
 
-function Comments({comments}){
+function Comments({comments, post}){
     const display = comments.map((comment) => {
-        return <Comment comment={comment}/>
+        return <Comment key={`post-${post.id}-comment-${comment.id}`} comment={comment}/>
     })
 
     return(
-        <div className='commentList'>
+        <div className='comments'>
             {display}
         </div>
     )
