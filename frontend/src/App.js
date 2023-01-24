@@ -1,14 +1,14 @@
 import './App.css';
-import Post from './Components/Post'
+import Posts from './Components/Posts'
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [post, setPost] = useState({});
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/posts")
+    fetch("http://127.0.0.1:9393/posts")
     .then(resp => resp.json())
-    .then(data => console.log(data))//setPost(data))
+    .then(data => setPosts(data))//setPost(data))
   }, []);
 
 //   useEffect(()=> {
@@ -24,11 +24,13 @@ function App() {
 //     fetchData()
 //  }, [])
 
+
+
   return (
     <div className="App">
       <header className="App-header">
       </header>
-      <Post post={post}/>
+      <Posts posts={posts}/>
     </div>
   );
 }
