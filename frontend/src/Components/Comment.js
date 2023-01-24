@@ -1,7 +1,7 @@
 function Comment({comment}){
     return(
         <div className="comment">
-            {/* {comment.comment} */}
+            {comment.comment}
         </div>
     )
 }
