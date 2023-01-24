@@ -1,25 +1,35 @@
 import CreateComment from './CreateComment'
 import Comments from './Comments'
+import {useState} from 'react'
 
 function Post({post}){
+const [comment, setComment] = useState(false)
 
-    // "id": 3,
-    // "caption": "Goodness comes to those who wait.",
-    // "date": "2014-02-10T00:00:00.000Z",
-    // "likes": 61,
-    // "image": "https://loremflickr.com/300/300",
-    // "user_id": 4,
-    // "created_at": "2023-01-23T16:42:24.670Z",
-    // "updated_at": "2023-01-23T16:42:24.670Z",
+const createComment = () => {
 
+}
     return(
         <div className="post">
             <img className="image" src={post.image} alt="post"/>
             <p className='likes'>{post.likes} Likes</p>
             <p className='caption'>{post.caption}</p>
             <p className='posted'>Posted: {post.date}</p>
-            <h2>Comments</h2>
-            <Comments comments={post.comments} post={post}/>
+            <button className='commentButton' onClick={() => setComment(currentValue => !currentValue)} value={comment}>Comment</button>
+            <>{comment ? 
+                <>
+                <div className='commentSection'>
+                <h2>Comments</h2>
+                <Comments comments={post.comments} post={post}/>
+                </div>
+                    <form className='input'> 
+                        <input className='commentInput' placeholder='Add a comment'/>
+                        <button className='inputButton' onClick={createComment}> send </button>
+                    </form>
+                </>
+                :
+                null
+                }
+            </>
         </div>
     )
 }
