@@ -6,7 +6,7 @@ function App() {
   const [post, setPost] = useState({});
 
   useEffect(() => {
-    fetch("http://127.0.0.1:9393/posts")
+    fetch("http://localhost:3000/posts")
     .then(resp => resp.json())
     .then(data => console.log(data))//setPost(data))
   }, []);
