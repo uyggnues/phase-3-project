@@ -6,7 +6,7 @@ end
 
 use Rack::Cors do
   allow do
-    origins 'localhost:3000'
+    origins '*'
     resource '*', headers: :any, methods: [:get, :post, :delete, :put, :patch, :options, :head]
   end
 end
