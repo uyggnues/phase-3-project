@@ -1,9 +1,13 @@
 import './App.css';
 import Posts from './Components/Posts'
+import LogIn from './Components/LogIn'
 import { useState, useEffect } from 'react';
+import SignUp from './Components/SignUp';
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     fetch("http://127.0.0.1:9393/posts")
@@ -30,6 +34,8 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
+      <LogIn userName={userName} setUserName={setUserName} password={password} setPassword={setPassword}/>
+      <SignUp/>
       <Posts posts={posts}/>
     </div>
   );

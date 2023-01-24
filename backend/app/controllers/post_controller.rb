@@ -8,7 +8,7 @@ class PostController < Sinatra::Base
     end
 
     get '/posts' do
-        Post.all.to_json(include: [:comments])
+        Post.order(date: :desc).all.to_json(include: [:comments])
     end
 
     get "/posts/:id/comments" do
