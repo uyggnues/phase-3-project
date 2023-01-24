@@ -7,7 +7,7 @@ function Posts({posts}){
 
     return(
         <div className="posts">
-            <div className="header" >TITLE</div>
+            <div className="header" >Snap Shot</div>
             <div className="dis">
                 {display}
             </div>
