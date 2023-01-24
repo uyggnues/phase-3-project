@@ -1,0 +1,27 @@
+.posts {
+    display: grid;
+}
+
+.header {
+    text-align: center;
+    font-size: 50px;
+    background-color: aqua;
+    grid-column: 1 / 4;
+}
+
+.dis {
+    grid-row: 2 / 3;
+    /* justify-content: center; */
+    position: absolute;
+    margin-left: 50%;
+    left: -175px;
+    margin-top: 80px;
+    grid-template-columns: repeat(4, minmax(56px, 80px));
+}
+
+.post {
+    border: 2px solid;
+    width: 350px;
+    height: 550px;
+
+}
