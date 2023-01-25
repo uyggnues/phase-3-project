@@ -40,21 +40,21 @@ function SignUp({}) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label for="FirstName">First Name</label>
-                <input type="text" name="FirstName" onChange={handleChange} value={newUser.FirstName}/>
-                <label for="LastName">Last Name</label>
-                <input type="text" name="LastName" onChange={handleChange} value={newUser.LastName}/>
-                <label for="UserName">User Name</label>
-                <input type="text" name="UserName" onChange={handleChange} value={newUser.UserName}/>
-                <label for="Email">email</label>
-                <input type="text" name="Email" onChange={handleChange} value={newUser.Email}/>
-                <label for="Password">Password</label>
-                <input type="password" name="Password" accesskey="P" maxlength="32" autocomplete="off" onChange={handleChange} value={newUser.Password}/>
-                <label for="ConfirmPassword">Password</label>
-                <input type="password" name="ConfirmPassword" accesskey="P" maxlength="32" autocomplete="off" onChange={handleChange} value={newUser.ConfirmPassword}/>
-                <input type="submit" />
+        <div className="form">
+            <form className="formInput2" onSubmit={handleSubmit}>
+                <label className="text" for="FirstName">First Name</label>
+                <input className="inputs" type="text" name="FirstName" onChange={handleChange} value={newUser.FirstName} placeholder='first name'/>
+                <label className="text" for="LastName">Last Name</label>
+                <input className="inputs" type="text" name="LastName" onChange={handleChange} value={newUser.LastName} placeholder='last name'/>
+                <label className="text" for="UserName">Username</label>
+                <input className="inputs" type="text" name="UserName" onChange={handleChange} value={newUser.UserName} placeholder='username'/>
+                <label className="text" for="Email">email</label>
+                <input className="inputs" type="text" name="Email" onChange={handleChange} value={newUser.Email} placeholder='email'/>
+                <label className="text" for="Password">Password</label>
+                <input className="inputs" type="password" name="Password" accessKey="P" maxLength="32" autoComplete="off" onChange={handleChange} value={newUser.Password} placeholder='password'/>
+                <label className="text" for="ConfirmPassword">Confirm Password</label>
+                <input className="inputs" type="password" name="ConfirmPassword" accessKey="P" maxLength="32" autoComplete="off" onChange={handleChange} value={newUser.ConfirmPassword} placeholder='confirm password'/>
+                <input className="logButton"type="submit" />
             </form>
         </div>
     )
