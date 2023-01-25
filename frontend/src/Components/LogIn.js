@@ -1,32 +1,6 @@
 function LogIn({userName, setUserName, password, setPassword}) {
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = () => {
 
-        const user ={
-            username: userName,
-            password: password
-        }
-
-        console.log(user)
-
-        fetch("http://127.0.0.1:9393/login", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify(user)
-        })
-        .then(res => {
-            if (res.ok){
-                res.json().then(userObj => console.log(userObj))
-            }else{
-                res.json().then(messageObj => console.log(messageObj.message))
-            }         
-        })
-        .then(data => console.log(data))
-        .catch((error) => {
-            console.log(error)
-          })
     }
 
     const handleChange = (e) => {
