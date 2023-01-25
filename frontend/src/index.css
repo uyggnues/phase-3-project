@@ -13,12 +13,11 @@
 }
 
 .dis {
-    grid-row: 2 / 3;
+    /* grid-row: 2 / 3; */
     position: absolute;
     margin-left: 50%;
     left: -200px;
     margin-top: 80px;
-    grid-template-columns: repeat(4, minmax(56px, 80px));
     }
 
 .post {
@@ -56,11 +55,9 @@
     display: grid;
     text-align: left;
     font-size: xx-small;
-    grid-gap: 5px;
     width: 99%;
     position: absolute;
     bottom: 40px;
-
 }
 
 .comment{
@@ -70,6 +67,8 @@
     width: inherit;
     color: white;
     border-color: grey;
+    display: grid;
+    grid-row-gap: 5px;
 }
 
 .caption{
