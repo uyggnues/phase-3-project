@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-function SignUp({}) {
+function SignUp({setUser, toggleAuth, setToggleAuth, setMessage}) {
     const [newUser, setNewUser] = useState({
         FirstName: "", 
         LastName: "", 
@@ -54,7 +54,8 @@ function SignUp({}) {
                 <input className="inputs" type="password" name="Password" accessKey="P" maxLength="32" autoComplete="off" onChange={handleChange} value={newUser.Password} placeholder='password'/>
                 <label className="text" for="ConfirmPassword">Confirm Password</label>
                 <input className="inputs" type="password" name="ConfirmPassword" accessKey="P" maxLength="32" autoComplete="off" onChange={handleChange} value={newUser.ConfirmPassword} placeholder='confirm password'/>
-                <input className="logButton"type="submit" />
+                <button className="logButton" type="submit">Sign up</button>
+                <button className="logButton" type="click" onClick={() => setToggleAuth(currentValue => !currentValue)} value={toggleAuth}>Log in</button>
             </form>
         </div>
     )
