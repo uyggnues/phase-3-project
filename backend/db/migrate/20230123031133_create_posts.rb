@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.datetime :date
       t.integer :likes
       t.string :image
+      t.string :username
       t.belongs_to :user
     
       t.timestamps
