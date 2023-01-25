@@ -2,7 +2,9 @@ import './App.css';
 import Posts from './Components/Posts'
 import Login from './Components/Login'
 import NewPost from './Components/NewPost'
+import Navbar from './Components/Navbar';
 import { useState, useEffect } from 'react';
+import { Routes, Route } from "react-router-dom";
 import SignUp from './Components/SignUp';
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
   const [user, setUser] = useState(null);  
   const [message, setMessage] = useState(null);
   const [toggleAuth, setToggleAuth] = useState(false);
+
+  const [page, setPage] = useState("/home")
 
   useEffect(() => {
     fetch("http://localhost:9393/posts")
@@ -28,9 +32,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
       </header>
-      <Posts posts={posts}/>
-      <NewPost/>
+      <Navbar setPage={setPage}/>
+      <Routes>
+        <Route path="/login" element={<Login userName={userName} setUserName={setUserName} password={password} setPassword={setPassword} setPage={setPage}/>}/>
+        <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
+        <Route path="/posts" element={<Posts posts={posts}/>}/>
+        <Route path="/newpost" element={<NewPost/>}/>
+        <Route path="*" element={<Posts posts={posts}/>}/>
+      </Routes>
     </div>
   );
 }
