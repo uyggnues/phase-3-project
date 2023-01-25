@@ -12,13 +12,13 @@ function LogIn({userName, setUserName, password, setPassword}) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label for="name">User Name</label>
-                <input type="text" name="name" onChange={handleChange} value={userName}/>
-                <label for="password">Password</label>
-                <input type="password" accesskey="P" maxlength="32" autocomplete="off" onChange={handlePassword} value={password}/>
-                <input type="submit" name="submit" value={"Login"}/>
+        <div className="form">
+            <form className="formInput" onSubmit={handleSubmit}>
+                <label className="text" for="name">Username</label>
+                <input className="inputs" type="text" name="name" onChange={handleChange} value={userName} placeholder='username'/>
+                <label className="text" for="password">Password</label>
+                <input className="inputs" type="password" accessKey="P" maxLength="32" autoComplete="off" onChange={handlePassword} value={password} placeholder='password'/>
+                <input className="logButton" type="submit" name="submit" value={"Login"}/>
             </form>
         </div>
     )

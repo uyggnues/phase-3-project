@@ -1,5 +1,6 @@
 .posts {
     display: grid;
+    grid-gap: 100px;
 }
 
 .header {
@@ -16,20 +17,36 @@
     /* justify-content: center; */
     position: absolute;
     margin-left: 50%;
-    left: -150px;
+    left: -200px;
     margin-top: 80px;
     grid-template-columns: repeat(4, minmax(56px, 80px));
 }
 
 .post {
-    border: 2px solid;
-    width: 300px;
+    width: 400px;
     height: 700px;
+    background-color: aliceblue;
+    border: 2px solid;
+    border-color: rgba(0, 0, 0, 0.374);
+    box-shadow: black 1px 1px;
+    display: grid;
+    grid-gap: 0px;
+}
 
+.posted{
+    font-size: small;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.user{
+    text-align: left;
+    font-size: medium;
+    padding-left: 5px;
 }
 
 .image {
-    width: 300px;
+    width: 400px;
     height: 500px;
     max-width: 100%;
     max-height: 100%;
@@ -58,7 +75,7 @@
 }
 
 .likes {
-    font-size: small;
+    font-size: medium;
     text-align: left;
     padding-left: 5px;
     padding-right: 5px;
@@ -66,6 +83,7 @@
 
 .commentButton{
     background-color: transparent;
+    /* border-color: transparent; */
 }
 
 .commentSection{
@@ -94,4 +112,56 @@
 
 .input{
     display: grid;
+}
+
+.form{
+    display: grid;
+}
+
+
+.formInput{
+    height: 300px;
+    width: 400px;
+    display: grid;
+    border: 2px solid;
+    grid-column: 2 / 3;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    border-color: rgba(128, 128, 128, 0.494);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.566) 3px 3px;
+}
+
+.formInput2{
+    height: 600px;
+    width: 400px;
+    display: grid;
+    border: 2px solid;
+    grid-column: 2 / 3;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    border-color: rgba(128, 128, 128, 0.494);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.566) 3px 3px;
+}
+
+.text{
+    text-align: left;
+
+}
+
+.inputs{
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.logButton{
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: rgb(210, 208, 208);
+    border-color: transparent;
 }
