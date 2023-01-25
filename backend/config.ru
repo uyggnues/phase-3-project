@@ -14,6 +14,7 @@ end
 use Rack::JSONBodyParser
 
 run ApplicationController
-use UserController
-use PostController
-use CommentController
+use UsersController
+use PostsController
+use CommentsController
+use SessionsController
