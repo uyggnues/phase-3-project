@@ -1,12 +1,7 @@
 require './config/environment'
 require 'pry'
 
-class UserController < Sinatra::Base
-
-    configure do
-        set :public_folder, 'public'
-        set :views, 'app/views'
-    end
+class UsersController < ApplicationController
 
     get '/users' do
         user = User.all
@@ -19,7 +14,7 @@ class UserController < Sinatra::Base
     end
 
     post "/signup" do
-        user = User.create(params)
+        user = User.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], username: [:username], password_confirmation: params[:password])
         if user.id
             sessions[:user_id] = user.id
             halt 201, {user: user}.to_json
