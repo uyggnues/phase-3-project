@@ -1,11 +1,6 @@
 require './config/environment'
 
-class CommentController < Sinatra::Base
-
-    configure do
-        set :public_folder, 'public'
-        set :views, 'app/views'
-    end
+class CommentsController < ApplicationController
 
     get '/comments' do
         comment = Comment.all.sort_by(&:date)

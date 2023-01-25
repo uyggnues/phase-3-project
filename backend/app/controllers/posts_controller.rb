@@ -1,15 +1,10 @@
 require './config/environment'
 require 'pry'
 
-class PostController < Sinatra::Base
-
-    configure do
-        set :public_folder, 'public'
-        set :views, 'app/views'
-    end
+class PostsController < ApplicationController
 
     get '/posts' do
-        Post.order(date: :desc).all.to_json(include: [:comments])
+        Post.order(date: :desc).to_json(include: [:comments])
     end
 
     get "/posts/:id/comments" do

@@ -5,7 +5,6 @@
 }
 
 body {
-  padding: 20px;
   text-align: center;
   background-color: #fafafa;
 }
@@ -121,3 +120,80 @@ body {
   outline: none;
 }
 
+.navbar {
+  height: 10%;
+  width: 100%;
+  background-color: rgb(31, 31, 31);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  
+}
+
+nav{
+  height: 20%;
+  width: 98%;
+  background-color: rgb(31, 31, 31);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 1rem;
+  border: solid black;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.site-title{
+  font-size: 2rem;
+}
+
+.navbar a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.login{
+  display: flex;
+  border: solid;
+  width: 35vw;
+  flex-direction: column;
+  margin-left: 33vw;
+  margin-top: 15vh;
+}
+
+.login form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login form input{
+  
+}
+
+.signup{
+  display: flex;
+  border: solid;
+  width: 35vw;
+  flex-direction: column;
+}
+
+.signup form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

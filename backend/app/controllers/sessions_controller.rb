@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     post "/login" do
-        user = User.find_by_email(params[:email])
+        user = User.find_by_email(params[:username])
         if user&authenticate(params[:password])
             seesion[:user_id] = user.id
             halt 200, {user: user}.to_json

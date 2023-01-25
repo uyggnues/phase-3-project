@@ -24,6 +24,7 @@ puts "creating posts/comments"
     10.times do
         p = Post.create(caption: Faker::Quote.famous_last_words, date: Faker::Date.between(from: 5.years.ago, to:Date.today), likes: rand(1..100), user: User.all.sample, image: Faker::LoremFlickr.image)
         10.times do
-            Comment.create(comment: Faker::Quote.yoda, post: p, user: User.all.sample)
+            user = User.all.sample
+            Comment.create(comment: Faker::Quote.yoda, post: p, user: user, username: user.username)
         end
     end

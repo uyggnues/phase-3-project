@@ -10,6 +10,7 @@ const createComment = () => {
 }
     return(
         <div className="post">
+            <h1>{post.username}</h1>
             <img className="image" src={post.image} alt="post"/>
             <p className='likes'>{post.likes} Likes</p>
             <p className='caption'>{post.caption}</p>

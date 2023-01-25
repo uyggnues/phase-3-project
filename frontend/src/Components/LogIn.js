@@ -1,13 +1,13 @@
-function LogIn({userName, setUserName, password, setPassword}) {
+import { useState } from "react"
+
+function LogIn({setPage}) {
+    const [user, setUser] = useState({
+        username: "",
+        password: ""
+    });
+
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        const user ={
-            username: userName,
-            password: password
-        }
-
-        console.log(user)
 
         fetch("http://127.0.0.1:9393/login", {
             method: 'POST',
@@ -30,22 +30,20 @@ function LogIn({userName, setUserName, password, setPassword}) {
     }
 
     const handleChange = (e) => {
-        setUserName(e.target.value)
-    }
-
-    const handlePassword = (e) => {
-        setPassword(e.target.value)
+        setUser({...user, [e.target.name]:e.target.value})
     }
 
     return (
-        <div>
+        <div className="login">
             <form onSubmit={handleSubmit}>
                 <label for="name">User Name</label>
-                <input type="text" name="name" onChange={handleChange} value={userName}/>
+                <input type="text" name="name" onChange={handleChange} value={user.userName}/>
                 <label for="password">Password</label>
-                <input type="password" accesskey="P" maxlength="32" autocomplete="off" onChange={handlePassword} value={password}/>
+                <input type="password" name="password" maxlength="32" autocomplete="off" onChange={handleChange} value={user.password}/>
                 <input type="submit" name="submit" value={"Login"}/>
             </form>
+            <p>or</p>
+            <a onClick={()=>{setPage("/signup")}} href="signup">Sign up</a>
         </div>
     )
 }

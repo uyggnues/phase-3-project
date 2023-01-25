@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ka5x0h2ovi7XF2Ps3Ff2" name="Page-1">
-        <mxGraphModel dx="1438" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1145" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -154,7 +154,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="110" value="" style="whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
-                    <mxGeometry x="60" y="460" width="710" height="520" as="geometry"/>
+                    <mxGeometry x="60" y="510" width="710" height="520" as="geometry"/>
                 </mxCell>
                 <mxCell id="111" value="" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="290" y="620" width="230" height="340" as="geometry"/>
@@ -280,7 +280,7 @@
                         <mxPoint x="520" y="1340" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="279" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="250" target="273">
+                <mxCell id="279" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="250" target="273" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="520" y="1340" as="sourcePoint"/>
                     </mxGeometry>
@@ -306,7 +306,7 @@
                 <mxCell id="266" value="newPost" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="535" y="1280" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="280" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="273" target="264">
+                <mxCell id="280" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="273" target="264" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="273" value="yourAccount" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">

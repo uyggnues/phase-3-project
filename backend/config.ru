@@ -17,3 +17,4 @@ run ApplicationController
 use UserController
 use PostController
 use CommentController
+use SessionsController

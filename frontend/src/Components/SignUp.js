@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-function SignUp({}) {
+function SignUp({setPage}) {
     const [newUser, setNewUser] = useState({
         FirstName: "", 
         LastName: "", 
@@ -40,7 +40,7 @@ function SignUp({}) {
     }
 
     return (
-        <div>
+        <div className="signup">
             <form onSubmit={handleSubmit}>
                 <label for="FirstName">First Name</label>
                 <input type="text" name="FirstName" onChange={handleChange} value={newUser.FirstName}/>
@@ -52,10 +52,12 @@ function SignUp({}) {
                 <input type="text" name="Email" onChange={handleChange} value={newUser.Email}/>
                 <label for="Password">Password</label>
                 <input type="password" name="Password" accesskey="P" maxlength="32" autocomplete="off" onChange={handleChange} value={newUser.Password}/>
-                <label for="ConfirmPassword">Password</label>
+                <label for="ConfirmPassword">Confirm Password</label>
                 <input type="password" name="ConfirmPassword" accesskey="P" maxlength="32" autocomplete="off" onChange={handleChange} value={newUser.ConfirmPassword}/>
                 <input type="submit" />
             </form>
+            <p>Have an account?</p>
+            <a onClick={()=>{setPage("/login")}} href="login">Login</a>
         </div>
     )
 }
