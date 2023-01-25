@@ -18,6 +18,16 @@ class UserController < Sinatra::Base
         user .to_json
     end
 
+    post "/signup" do
+        user = User.create(params)
+        if user.id
+            sessions[:user_id] = user.id
+            halt 201, {user: user}.to_json
+        else
+            halt 400, {message: user.errors.full_messages.to_sentence}.to_json
+        end
+    end
+
     post '/users' do
         user = User.create(params)
         user.to_json

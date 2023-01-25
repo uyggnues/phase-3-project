@@ -1,6 +1,7 @@
 import './App.css';
 import Posts from './Components/Posts'
 import LogIn from './Components/LogIn'
+import NewPost from './Components/NewPost'
 import { useState, useEffect } from 'react';
 import SignUp from './Components/SignUp';
 
@@ -37,6 +38,7 @@ function App() {
       <LogIn userName={userName} setUserName={setUserName} password={password} setPassword={setPassword}/>
       <SignUp/>
       <Posts posts={posts}/>
+      <NewPost/>
     </div>
   );
 }

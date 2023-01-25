@@ -1,4 +1,5 @@
 require './config/environment'
+require 'pry'
 
 class PostController < Sinatra::Base
 
@@ -17,6 +18,7 @@ class PostController < Sinatra::Base
     end
 
     post '/posts' do
+        binding.pry
         post = Post.create(params)
         post.to_json
     end
