@@ -9,6 +9,8 @@ function LogIn({setPage}) {
     const handleSubmit = (e) => {
         e.preventDefault()
 
+        console.log(user)
+
         fetch("http://127.0.0.1:9393/login", {
             method: 'POST',
             headers: {
@@ -37,7 +39,7 @@ function LogIn({setPage}) {
         <div className="login">
             <form onSubmit={handleSubmit}>
                 <label for="name">User Name</label>
-                <input type="text" name="name" onChange={handleChange} value={user.userName}/>
+                <input type="text" name="username" onChange={handleChange} value={user.username}/>
                 <label for="password">Password</label>
                 <input type="password" name="password" maxlength="32" autocomplete="off" onChange={handleChange} value={user.password}/>
                 <input type="submit" name="submit" value={"Login"}/>

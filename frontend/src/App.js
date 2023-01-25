@@ -19,6 +19,9 @@ function App() {
     .then(data => setPosts(data))//setPost(data))
   }, []);
 
+  // if (!user) {
+  //   return (toggleAuth && <Login setUser={setUser} toggleAuth={toggleAuth} setToggleAuth={setToggleAuth} setMessage={setMessage} userName={userName} setUserName={setUserName} password={password} setPassword={setPassword}/>) || (<SignUp setUser={setUser} setToggleAuth={setToggleAuth} setMessage={setMessage} toggleAuth={toggleAuth}/>)
+  // }
  
   return (
     <div className="App">
@@ -27,7 +30,7 @@ function App() {
       </header>
       <Navbar setPage={setPage}/>
       <Routes>
-        <Route path="/login" element={<LogIn userName={userName} setUserName={setUserName} password={password} setPassword={setPassword} setPage={setPage}/>}/>
+        <Route path="/login" element={<LogIn setPage={setPage}/>}/>
         <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
         <Route path="/posts" element={<Posts posts={posts}/>}/>
         <Route path="/newpost" element={<NewPost/>}/>

@@ -20,7 +20,7 @@ const [comment, setComment] = useState(false)
                 </div>
                     <form className='input'> 
                         <input className='commentInput' placeholder='Add a comment'/>
-                        <button className='inputButton' onClick={createComment}> send </button>
+                        <button className='inputButton' onClick={CreateComment}> send </button>
                     </form>
                 </>
                 :
