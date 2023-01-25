@@ -1,6 +1,6 @@
 import './App.css';
 import Posts from './Components/Posts'
-import LogIn from './Components/LogIn'
+import Login from './Components/Login'
 import NewPost from './Components/NewPost'
 import Navbar from './Components/Navbar';
 import { useState, useEffect } from 'react';
@@ -11,17 +11,24 @@ function App() {
   const [posts, setPosts] = useState([]);  
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState(null);  
+  const [message, setMessage] = useState(null);
+  const [toggleAuth, setToggleAuth] = useState(false);
+
   const [page, setPage] = useState("/home")
 
   useEffect(() => {
-    fetch("http://127.0.0.1:9393/posts")
+    fetch("http://localhost:9393/posts")
     .then(resp => resp.json())
     .then(data => setPosts(data))//setPost(data))
   }, []);
 
-  // if (!user) {
-  //   return (toggleAuth && <Login setUser={setUser} toggleAuth={toggleAuth} setToggleAuth={setToggleAuth} setMessage={setMessage} userName={userName} setUserName={setUserName} password={password} setPassword={setPassword}/>) || (<SignUp setUser={setUser} setToggleAuth={setToggleAuth} setMessage={setMessage} toggleAuth={toggleAuth}/>)
-  // }
+  if (!user) {
+    return (toggleAuth && <Login setUser={setUser} toggleAuth={toggleAuth} setToggleAuth={setToggleAuth} setMessage={setMessage} userName={userName} setUserName={setUserName} password={password} setPassword={setPassword}/>) 
+    || (<SignUp setUser={setUser} setToggleAuth={setToggleAuth} setMessage={setMessage} toggleAuth={toggleAuth}/>)
+  }
+
+
  
   return (
     <div className="App">
@@ -30,7 +37,7 @@ function App() {
       </header>
       <Navbar setPage={setPage}/>
       <Routes>
-        <Route path="/login" element={<LogIn setPage={setPage}/>}/>
+        <Route path="/login" element={<Login setPage={setPage}/>}/>
         <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
         <Route path="/posts" element={<Posts posts={posts}/>}/>
         <Route path="/newpost" element={<NewPost/>}/>
