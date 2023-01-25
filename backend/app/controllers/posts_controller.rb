@@ -1,4 +1,3 @@
-require './config/environment'
 require 'pry'
 
 class PostsController < ApplicationController

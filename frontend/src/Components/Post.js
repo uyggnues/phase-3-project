@@ -2,12 +2,8 @@ import CreateComment from './CreateComment'
 import Comments from './Comments'
 import {useState} from 'react'
 
-function Post({post}){
+function Post({post, setComments}){
 const [comment, setComment] = useState(false)
-
-const createComment = () => {
-
-}
     return(
         <div className="post">
             <h1>{post.username}</h1>
@@ -30,8 +26,8 @@ const createComment = () => {
                 :
                 null
                 }
-            </>
-        </div>
+                </>
+            </div>
     )
 }
 

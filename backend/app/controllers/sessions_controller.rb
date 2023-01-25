@@ -1,3 +1,4 @@
+
 class SessionsController < ApplicationController
     post "/login" do
         user = User.find_by_email(params[:username])
@@ -11,6 +12,6 @@ class SessionsController < ApplicationController
 
     delete "/logout" do 
         delete session[:user_id]
-        halt 200, {message: "Logged Out"}
+        halt 200, {message: "Logged Out"}.to_json
     end
 end

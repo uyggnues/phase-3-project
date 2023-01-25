@@ -3,7 +3,7 @@ require './config/environment'
 class CommentsController < ApplicationController
 
     get '/comments' do
-        comment = Comment.all.sort_by(&:date)
+        comment = Comment.all.sort_by(&:created_at)
         comment.to_json
     end
 
