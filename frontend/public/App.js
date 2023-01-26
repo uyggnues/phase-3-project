@@ -44,7 +44,7 @@ function App() {
         <Routes>
             <Route path="/login" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
             <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
-            {/* <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/> */}
+            <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/>
         </Routes>
       }
     </div>

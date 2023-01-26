@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function Login({userName, setUserName, password, setPassword, setUser, toggleAuth, setToggleAuth, setMessage}) {
+function Login({setUser, setMessage, setPage}) {
 
     const [user, setUserObj] = useState({
         username: "",
@@ -21,6 +21,8 @@ function Login({userName, setUserName, password, setPassword, setUser, toggleAut
             resp.json().then(userObj => {
               setUser(userObj.user)
               setMessage("User successfully logged in!")
+              window.localStorage.setItem("user", JSON.stringify(userObj.user))
+              window.localStorage.setItem("isLoggedIn", true)
             })
           } else {
             resp.json().then(messageObj => setMessage(messageObj.message))
@@ -43,7 +45,8 @@ function Login({userName, setUserName, password, setPassword, setUser, toggleAut
                 <label className="text" for="password">Password</label>
                 <input className="inputs" name="password" type="password" maxLength="32" autoComplete="off" onChange={handleChange} value={user.password} placeholder='password'/>
                 <button className="logButton" type="submit" name="submit" value={"Login"}>Log In</button>
-                <button className="logButton" type="click" onClick={() => setToggleAuth(currentValue => !currentValue)} value={toggleAuth}>Sign up</button>
+                <p>or</p>
+                <a href="signup" onClick={()=>{setPage("/signup")}}>Sign up</a>
             </form>
         </div>
     )
