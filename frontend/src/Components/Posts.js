@@ -2,9 +2,9 @@ import Post from "./Post"
 import React from 'react'
 
 
-function Posts({posts, setPosts}){
+function Posts({posts, setPosts, user}){
     const display = posts.map((post) => {
-        return <Post key={`post-${post.id}`} post={post} setPosts={setPosts}/>
+        return <Post key={`post-${post.id}`} post={post} setPosts={setPosts} user={user}/>
     })
 
 return(

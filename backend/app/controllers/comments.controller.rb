@@ -8,8 +8,13 @@ class CommentsController < ApplicationController
     end
 
     post '/comments' do
-        comment = Comment.create(params)
-        comment.to_json
+        # binding.pry
+        comment = params[:comment]
+        post = Post.find_by(id: params[:post_id])
+        user = User.find_by(username:  params[:username])
+        Comment.create(comment: comment, post: post, user: user, username: params[:username])
+        # binding.pry
+        post.to_json
     end
 
     # UPDATE
