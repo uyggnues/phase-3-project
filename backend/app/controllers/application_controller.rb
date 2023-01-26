@@ -5,7 +5,7 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :default_content_type, :json
-    # set :views, 'app/views'
+    set :method_override, true
     enable :sessions
     set :session_secret, ENV["SESSION_SECRET"]
   end
@@ -22,5 +22,7 @@ class ApplicationController < Sinatra::Base
       halt 400, {message: "No one is logged in!"}
     end
   end
+
+
 
 end

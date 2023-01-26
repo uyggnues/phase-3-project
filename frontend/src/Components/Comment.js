@@ -1,8 +1,8 @@
 function Comment({comment}){
     return(
-        <div className="comment">
-            <h1>{comment.username}</h1>
-            <p>{comment.comment}</p>
+        <div >
+            <h1 className="comUser">{comment.username}</h1>
+            <p className="comment">{comment.comment}</p>
         </div>
     )
 }

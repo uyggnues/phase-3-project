@@ -1,11 +1,15 @@
 import './App.css';
 import Posts from './Components/Posts'
+import Post from './Components/Post'
 import Login from './Components/Login'
 import NewPost from './Components/NewPost'
 import Navbar from './Components/Navbar';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import SignUp from './Components/SignUp';
+
+
+export const AppContext = React.createContext();
 
 function App() {
   const [posts, setPosts] = useState([]);  
@@ -31,16 +35,19 @@ function App() {
  
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <AppContext.Provider value={setPosts}>
+        {setPosts}
+      </AppContext.Provider> */}
 
+      <header className="App-header">
       </header>
       <Navbar setPage={setPage}/>
       <Routes>
         <Route path="/login" element={<Login userName={userName} setUserName={setUserName} password={password} setPassword={setPassword} setPage={setPage}/>}/>
         <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
-        <Route path="/posts" element={<Posts posts={posts}/>}/>
-        <Route path="/newpost" element={<NewPost/>}/>
-        <Route path="*" element={<Posts posts={posts}/>}/>
+        <Route path="/posts" element={<Posts posts={posts} setPosts={setPosts}/>}/>
+        <Route path="/newPost" element={<NewPost/>}/>
+        <Route path="*" element={<Posts posts={posts} setPosts={setPosts}/>}/>
       </Routes>
     </div>
   );
