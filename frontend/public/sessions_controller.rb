@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     delete "/logout" do 
         #binding.pry
-        session.delete :user_id
+        delete session[:user_id]
         halt 200, {message: "Logged Out"}.to_json
     end
 end

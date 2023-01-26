@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     end
 
     post '/posts' do
-        # binding.pry
+        #binding.pry
         post = Post.create(params)
         post.to_json
     end

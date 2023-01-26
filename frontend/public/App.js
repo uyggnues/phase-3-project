@@ -1,10 +1,9 @@
 import './App.css';
 import Posts from './Components/Posts'
-import Post from './Components/Post'
 import Login from './Components/Login'
 import NewPost from './Components/NewPost'
 import Navbar from './Components/Navbar';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import SignUp from './Components/SignUp';
 import Logout from './Components/Logout';
@@ -45,7 +44,7 @@ function App() {
         <Routes>
             <Route path="/login" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
             <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
-            {/* <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/> */}
+            <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/>
         </Routes>
       }
     </div>

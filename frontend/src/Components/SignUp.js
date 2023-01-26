@@ -55,10 +55,10 @@ function SignUp({setUser, toggleAuth, setToggleAuth, setMessage, setPage}) {
                 <label className="text" for="ConfirmPassword">Confirm Password</label>
                 <input className="inputs" type="password" name="ConfirmPassword" maxLength="32" autoComplete="off" onChange={handleChange} value={newUser.ConfirmPassword} placeholder='confirm password'/>
                 <button className="logButton" type="submit">Sign up</button>
-                <button className="logButton" type="click" onClick={() => setToggleAuth(currentValue => !currentValue)} value={toggleAuth}>Log in</button>
+                <p>Have an account?</p>
+                <a onClick={()=>{setPage("/login")}} href="login">Login</a>
             </form>
-            <p>Have an account?</p>
-            <a onClick={()=>{setPage("/login")}} href="login">Login</a>
+
         </div>
     )
 }
