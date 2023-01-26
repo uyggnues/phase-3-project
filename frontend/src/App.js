@@ -35,9 +35,9 @@ function App() {
  
   return (
     <div className="App">
-      <AppContext.Provider value={setPosts}>
+      {/* <AppContext.Provider value={setPosts}>
         {setPosts}
-      </AppContext.Provider>
+      </AppContext.Provider> */}
 
       <header className="App-header">
       </header>
@@ -45,9 +45,9 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login userName={userName} setUserName={setUserName} password={password} setPassword={setPassword} setPage={setPage}/>}/>
         <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
-        <Route path="/posts" element={<Posts posts={posts}/>}/>
+        <Route path="/posts" element={<Posts posts={posts} setPosts={setPosts}/>}/>
         <Route path="/newPost" element={<NewPost/>}/>
-        <Route path="*" element={<Posts posts={posts}/>}/>
+        <Route path="*" element={<Posts posts={posts} setPosts={setPosts}/>}/>
       </Routes>
     </div>
   );
