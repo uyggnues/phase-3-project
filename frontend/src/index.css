@@ -13,12 +13,13 @@
 }
 
 .dis {
-    /* grid-row: 2 / 3; */
     position: absolute;
     margin-left: 50%;
     left: -200px;
     margin-top: 80px;
-    }
+    grid-gap: 150px;
+    display: grid;
+}
 
 .post {
     width: 400px;
