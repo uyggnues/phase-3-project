@@ -48,8 +48,11 @@
     max-width: 100%;
     max-height: 100%;
     border: 1px solid black;
-
 }
+
+.heart { 
+    position: relative; 
+} 
 
 .comments{
     display: grid;
@@ -57,7 +60,7 @@
     font-size: xx-small;
     width: 99%;
     position: absolute;
-    bottom: 40px;
+    /* bottom: 40px; */
 }
 
 .comment{
@@ -69,6 +72,15 @@
     border-color: grey;
     display: grid;
     grid-row-gap: 5px;
+}
+
+.comUser{
+    padding-top: 15px;
+    padding-left: 5px;
+    color: white;
+    display: grid;
+    grid-row-gap: 5px;
+    font-size: medium;
 }
 
 .caption{
@@ -89,14 +101,23 @@
     /* border-color: transparent; */
 }
 
+.comOutline{
+    position: absolute;
+    height: 9%;
+    width: 100%;
+    border: 2px solid;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
 .commentSection{
     position: absolute;
-    overflow: auto;
-    height: 9%;
-    width: 200%;
+    overflow: scroll;
+    height: 90%;
+    width: 100%;
     border: 2px solid;
-    margin-left: 1%;
-    left: -200px;
+    /* left: -50px; */
     background-color: black;
     border-radius: 10px;
 }
@@ -105,9 +126,9 @@
 }
 
 .comTitle{
-    /* border: 2px solid black; */
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 
 .commentText{
@@ -117,9 +138,9 @@
 
 .commentInput{
     position: absolute;
-    height: 30px;
-    width: 700px;
     bottom: 0;
+    height: 40px;
+    width: 80%;
     background-color: black;
     border-width:0px;
     border:none;
@@ -176,7 +197,9 @@
 
 .text{
     text-align: left;
-
+    padding-left: 5px;
+    padding-top: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .inputs{

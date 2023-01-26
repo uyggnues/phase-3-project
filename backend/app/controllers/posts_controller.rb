@@ -12,15 +12,23 @@ class PostsController < ApplicationController
     end
 
     post '/posts' do
-        binding.pry
+        # binding.pry
         post = Post.create(params)
         post.to_json
     end
 
     # UPDATE
-    patch '/posts/:id' do
+    patch '/posts/:id/increment' do
+        # binding.pry
         post = Post.find(params[:id])
-        post.update(amount: params[:amount])
+        post.update(likes: post.likes + 1)
+        post.to_json
+    end
+
+    patch '/posts/:id/decrement' do
+        # binding.pry
+        post = Post.find(params[:id])
+        post.update(likes: post.likes - 1)
         post.to_json
     end
 
