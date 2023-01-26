@@ -11,9 +11,8 @@ use Rack::Cors do
   end
 end
 
-use Rack::JSONBodyParser
 use Rack::MethodOverride
-
+use Rack::JSONBodyParser
 run ApplicationController
 use UsersController
 use PostsController

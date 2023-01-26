@@ -1,9 +1,10 @@
 import './App.css';
 import Posts from './Components/Posts'
+import Post from './Components/Post'
 import Login from './Components/Login'
 import NewPost from './Components/NewPost'
 import Navbar from './Components/Navbar';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import SignUp from './Components/SignUp';
 import Logout from './Components/Logout';
