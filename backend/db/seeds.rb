@@ -20,7 +20,7 @@ puts "creating users"
     u1 = User.create(first_name: "seunggyu", last_name: "lee", username: "oogy", password: "hello11", email: "oogy@email.com")
     u2 = User.create(first_name: "andrew", last_name: "forest", username: "aforest", password: "password", email: "aforest41@yahoo.com")
     5.times do 
-        User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username:)
+        User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::FunnyName.name, password: Faker::Superhero.name, email: "#{Faker::Name.first_name}@email.com")
     end
 
 puts "creating posts/comments"
