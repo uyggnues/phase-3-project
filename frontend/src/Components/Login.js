@@ -40,9 +40,9 @@ function Login({setUser, setMessage, setPage}) {
     return (
         <div className="form">
             <form className="formInput" onSubmit={handleSubmit}>
-                <label className="text" for="name">Username</label>
+                <label className="text" >Username</label>
                 <input className="inputs" type="username" name="username" onChange={handleChange} value={user.username} placeholder='username'/>
-                <label className="text" for="password">Password</label>
+                <label className="text" >Password</label>
                 <input className="inputs" name="password" type="password" maxLength="32" autoComplete="off" onChange={handleChange} value={user.password} placeholder='password'/>
                 <button className="logButton" type="submit" name="submit" value={"Login"}>Log In</button>
                 <p>or</p>

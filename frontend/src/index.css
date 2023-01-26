@@ -52,6 +52,8 @@
 
 .heart { 
     position: relative; 
+    border: 0;
+    background-color: transparent;
 } 
 
 .comments{
@@ -101,25 +103,23 @@
     /* border-color: transparent; */
 }
 
-.comOutline{
+.comOut{
     position: absolute;
-    height: 9%;
-    width: 100%;
-    border: 2px solid;
+    height: 550px;
+    width: 400px;
+    border-radius: 20px;
     background-color: black;
-    border-radius: 10px;
 }
-
 
 .commentSection{
     position: absolute;
     overflow: scroll;
-    height: 90%;
-    width: 100%;
+    height: 500px;
+    width: 400px;
     border: 2px solid;
-    /* left: -50px; */
     background-color: black;
     border-radius: 10px;
+    /* margin-top: -150%; */
 }
 .commentSection::-webkit-scrollbar {
     display: none;
@@ -133,20 +133,25 @@
 
 .commentText{
     text-align: left;
-
 }
 
+
+.comBox{
+    display: grid;
+}
 .commentInput{
     position: absolute;
     bottom: 0;
     height: 30px;
-    width: 80%;
+    width: 70%;
     background-color: black;
     border-width:0px;
     border:none;
     border-radius: 20px;
     color: white;
     padding-left: 5px;
+    margin-left: 1%;
+    margin-bottom: 1%;
 }
 
 .inputButton{
@@ -158,6 +163,9 @@
     background-color: black;
     color: rgb(39, 179, 244);
     font-weight: bold;
+    border-radius: 20px;
+    margin-right: 1%;
+    margin-bottom: 1%;
 }
 
 .input{
@@ -208,6 +216,7 @@
     height: 40px;
     width: 100%;
     border-radius: 10px;
+    display: grid;
 }
 
 .logButton{

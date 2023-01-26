@@ -23,7 +23,7 @@ function App() {
   .then(data => setPosts(data))//setPost(data))
   }, []);
 
-  console.log(user)
+  // console.log(user)
  
   return (
     <div className="App">
@@ -35,16 +35,17 @@ function App() {
           <Routes>
               <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/>
               <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
-              <Route path="/posts" element={<Posts posts={posts}/>}/>
-              <Route path="/newpost" element={<NewPost/>}/>
-              <Route path="/newpost" element={<NewPost/>}/>
-              <Route path="*" element={<Posts posts={posts}/>}/>
+              <Route path="/posts" element={<Posts posts={posts} setPosts={setPosts}/>}/>
+              <Route path="/newPost" element={<NewPost/>}/>
+              <Route path="/account" element={<Account/>}/>
+              <Route path="*" element={<Posts posts={posts} setPosts={setPosts}/>}/>
           </Routes>
         </div>
           : 
         <Routes>
             <Route path="/login" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
             <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
+            <Route path="*" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
             {/* <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/> */}
         </Routes>
       }
