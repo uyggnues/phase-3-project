@@ -50,10 +50,14 @@ function NewPost({user, setPosts}){
 
     return(
         <div className="form">
+            <form className="formInput3" onSubmit={handleSubmit}>
             <div className="newPostImage">
-                {validator.isURL(newPost.image) ? <img className="image" src={newPost.image} alt="new Image"/> : null}
+                {validator.isURL(newPost.image) ? <img className="image" src={newPost.image} alt="Invalid"/> : <p className="imgText">
+                Place
+                Image_url
+                here
+                </p>}
             </div>
-            <form className="formInput" onSubmit={handleSubmit}>
                 <label className="text" >Caption</label>
                 <input className="inputs"type="text" name="caption" onChange={handleChange} value={newPost.caption} placeholder="caption"/>
                 <label className="text">Image_url</label>
