@@ -197,3 +197,10 @@ nav{
   align-items: center;
   flex-direction: column;
 }
+
+.newPostImage{
+  display: flex;
+  width: 30vw;
+  height: 40vh;
+  justify-content: center;
+}
