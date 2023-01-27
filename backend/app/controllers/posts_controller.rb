@@ -12,8 +12,9 @@ class PostsController < ApplicationController
     end
 
     post '/posts' do
-        #binding.pry
-        post = Post.create(params)
+        # binding.pry
+        user = User.find(params[:user][:id])
+        post = Post.create(caption: params[:caption], date: Date.today, likes: 0, user: user, username: user.username, image: params[:image])
         post.to_json
     end
 

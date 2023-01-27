@@ -22,8 +22,6 @@ function App() {
   .then(resp => resp.json())
   .then(data => setPosts(data))//setPost(data))
   }, []);
-
-  // console.log(user)
  
   return (
     <div className="App">
@@ -37,7 +35,7 @@ function App() {
               <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
               <Route path="/posts" element={<Posts posts={posts} setPosts={setPosts} user={user}/>}/>
               <Route path="/newPost" element={<NewPost user={user} setPosts={setPosts}/>}/>
-              <Route path="/account" element={<Account/>}/>
+              <Route path="/account" element={<Account posts={posts} user={user} setPosts={setPosts}/>}/>
               <Route path="*" element={<Posts posts={posts} setPosts={setPosts} user={user}/>}/>
           </Routes>
         </div>
