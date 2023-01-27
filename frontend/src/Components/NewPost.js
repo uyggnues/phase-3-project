@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import validator from 'validator'
 
 function NewPost({user, setPosts}){
     const navigate = useNavigate()
