@@ -228,8 +228,8 @@
 }
 
 .formInput3{
-    height: 600px;
-    width: 400px;
+    height: 80vh;
+    width: 35vw;
     display: grid;
     border: 2px solid;
     grid-column: 2 / 3;
@@ -238,13 +238,13 @@
     background-color: white;
     border-color: rgba(128, 128, 128, 0.494);
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.566) 3px 3px;
+    box-shadow: rgb(0 0 0 / 57%) 3px 3px;
 }
 
 .newPostImage{
+    margin: 5%;
     border: 5px solid;
     border-radius: 5px;
-    margin-left: 20%;
     background-color: rgb(175, 175, 175);
 }
 
