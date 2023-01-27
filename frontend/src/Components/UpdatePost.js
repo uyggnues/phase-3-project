@@ -26,13 +26,18 @@ function UpdatePost({post, setPosts}){
             setPosts(current => {
             const postId = current.findIndex(ele => ele.id === post.id)
             return [...current.slice(0, postId), post, ...current.slice(postId + 1)]
+
         }))
+        setUpdate({
+            caption: "",
+            post_id: post.id
+        })
     }
 
     return(
         <div className="updatePost">
             <form onSubmit={handleSubmit}>
-                <label className="text" >Caption</label>
+                <label className="text" >Update Caption</label>
                 <input className="inputs2" type="text" name="caption" onChange={handleChange} value={update.caption} placeholder="caption"/>
                 <input className="logButton" type="submit"/>
             </form>
