@@ -49,8 +49,6 @@ Pull Requests are welcome on [GitHub](https://github.com/uyggnues/phase-3-projec
 ## License 
 The program is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT)
 
-## Sources 
-The data for this project is sourced from "https://gist.github.com/rajatk16/3e7cc724f370873626aee8a85f277ce0"
 
 ### Walkthrough
 <a href=https://youtu.be/8-kMNw-tcPk><img id="img-with-fallback" class="style-scope ytcp-img-with-fallback" src="https://i9.ytimg.com/vi_webp/8-kMNw-tcPk/mq2.webp?sqp=CJi14Z0G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CIAC0AWKAgwIABABGH8gHSgTMA8=&rs=AOn4CLAU0TLT8KAHRD9w2kpUmGUYm1wSUw"/></a>

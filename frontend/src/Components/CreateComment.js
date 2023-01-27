@@ -15,7 +15,7 @@ function CreateComment({post, user, setPosts}){
     //     })
     // }, []);
 
-
+ 
     const handleChange = (e) => {
         setSendCom((currentUser) => (
             {...currentUser, [e.target.name]: e.target.value}
@@ -32,26 +32,36 @@ function CreateComment({post, user, setPosts}){
           },
           body: JSON.stringify(sendCom)
         })
-        .then(resp => resp.json())
-        .then(post => {
-            setPosts(current => {
-                const postId = current.findIndex(ele => ele.id === post.id)
-                const newPost = {...current[postId]}.comments.push(sendCom.comment)
-                // debugger
-                return [...current.slice(0, postId), newPost, ...current.slice(postId + 1)]
-            })
+        // .then(resp => resp.json())
+        .then(resp => {
+            if (resp.status === 200) {
+                resp.json()
+                .then(post => {
+                    setPosts(current => {
+                        const postId = current.findIndex(ele => ele.id === post.id)
+                        // const newPost = {...current[postId]} //, comments: [...]}.comments.push(sendCom.comment)
+                        // debugger
+                        return [...current.slice(0, postId), post, ...current.slice(postId + 1)]
+                    })
+                    setSendCom({
+                        comment: "",
+                        username: user.username,
+                        post_id: post.id,
+                    })
+                })
+            } else {
+                resp.json()
+                .then(msg => alert(msg))
+            }
         })
 
-        setSendCom({
-            comment: "",
-        })
     }
 
     return (
         <div className="comBox">
             <form className='input' onSubmit={handleComment}> 
                 <input className='commentInput' name="comment" type="comment" placeholder='Add a comment' onChange={handleChange} value={sendCom.comment}/>
-                <button className='inputButton' type="submit" onClick={CreateComment}> send </button>
+                <button className='inputButton' type="submit"> send </button>
             </form>
         </div>
  
