@@ -6,7 +6,7 @@ function Account({posts, user, setPosts}){
 
     const display = userPosts.map((post) => {
         return (
-            <div>
+            <div key={post.id}>
                 <Post key={`post-${post.id}`} post={post} setPosts={setPosts} user={user}/>  
                 <DeletePost key={`delete-${post.id}`} post={post} setPosts={setPosts}/>              
             </div>
