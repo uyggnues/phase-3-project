@@ -59,7 +59,7 @@ function Post({post, setComments, setPosts, user}){
             {post.likes}
             <button className='commentButton' onClick={() => setComment(currentValue => !currentValue)} value={comment}>💭</button>
             </p>
-            <p className='caption'>{post.username}: {post.caption}</p>
+            <p className='caption'>{post.caption}</p>
             <p className='posted'>Posted: {post.date.slice(0, 10)}</p>
             {comment ? <Comments comment={comment} setComment={setComment} comments={post.comments} post={post} user={user} setPosts={setPosts}/> : null}
         </div>

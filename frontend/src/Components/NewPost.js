@@ -5,6 +5,8 @@ import validator from 'validator'
 function NewPost({user, setPosts}){
     const navigate = useNavigate()
     const [newPost, setNewPost] = useState({
+        user: user,
+        username: user.username,
         caption: "",
         date: new Date(),
         likes: 0,
