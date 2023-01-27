@@ -17,7 +17,7 @@
     margin-left: 50%;
     left: -200px;
     margin-top: 80px;
-    grid-gap: 150px;
+    grid-gap: 250px;
     display: grid;
 }
 
@@ -262,5 +262,5 @@
     height: 60px;
     border-color: black;
     border:5px solid black;
-    background-color: rgb(30, 26, 26);
+    background-color: rgb(24, 22, 22);
 }
