@@ -1,17 +1,14 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import validator from 'validator'
 
 function NewPost({user, setPosts}){
     const navigate = useNavigate()
-
     const [newPost, setNewPost] = useState({
-        user_id: user.id,
-        username: user.username,
         caption: "",
         date: new Date(),
         likes: 0,
         image: ""
-        //add user, when login is working
     });
 
     const handleChange = (e) => {
@@ -51,11 +48,14 @@ function NewPost({user, setPosts}){
 
     return(
         <div className="form">
+            <div className="newPostImage">
+                {validator.isURL(newPost.image) ? <img className="image" src={newPost.image} alt="new Image"/> : null}
+            </div>
             <form className="formInput" onSubmit={handleSubmit}>
                 <label className="text" >Caption</label>
                 <input className="inputs"type="text" name="caption" onChange={handleChange} value={newPost.caption} placeholder="caption"/>
                 <label className="text">Image_url</label>
-                <input className="inputs"type="text" name="image" onChange={handleChange} value={newPost.image} placeholder="image_url"/>
+                <input className="inputs"type="text" name="image" onChange={handleChange} onPaste={handleChange} value={newPost.image} placeholder="image_url"/>
                 <input className="logButton" type="submit"/>
             </form>
         </div>
