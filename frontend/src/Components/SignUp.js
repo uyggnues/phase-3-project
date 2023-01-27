@@ -42,17 +42,17 @@ function SignUp({setUser, toggleAuth, setToggleAuth, setMessage, setPage}) {
     return (
         <div className="form">
             <form className="formInput2" onSubmit={handleSubmit}>
-                <label className="text" for="FirstName">First Name</label>
+                <label className="text">First Name</label>
                 <input className="inputs" type="text" name="FirstName" onChange={handleChange} value={newUser.FirstName} placeholder='first name'/>
-                <label className="text" for="LastName">Last Name</label>
+                <label className="text">Last Name</label>
                 <input className="inputs" type="text" name="LastName" onChange={handleChange} value={newUser.LastName} placeholder='last name'/>
-                <label className="text" for="UserName">Username</label>
+                <label className="text">Username</label>
                 <input className="inputs" type="text" name="UserName" onChange={handleChange} value={newUser.UserName} placeholder='username'/>
-                <label className="text" for="Email">email</label>
+                <label className="text">email</label>
                 <input className="inputs" type="text" name="Email" onChange={handleChange} value={newUser.Email} placeholder='email'/>
-                <label className="text" for="Password">Password</label>
+                <label className="text">Password</label>
                 <input className="inputs" type="password" name="Password" maxLength="32" autoComplete="off" onChange={handleChange} value={newUser.Password} placeholder='password'/>
-                <label className="text" for="ConfirmPassword">Confirm Password</label>
+                <label className="text">Confirm Password</label>
                 <input className="inputs" type="password" name="ConfirmPassword" maxLength="32" autoComplete="off" onChange={handleChange} value={newUser.ConfirmPassword} placeholder='confirm password'/>
                 <button className="logButton" type="submit">Sign up</button>
                 <p>Have an account?</p>
