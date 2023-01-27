@@ -14,9 +14,9 @@ This is a local hub for posting posts and commenting on either your posts or som
 ```
 bundle install 
 ```
-to download the node modules
+to start up the server
 
-* Next run 
+* run 
 ```
 shotgun
 ```

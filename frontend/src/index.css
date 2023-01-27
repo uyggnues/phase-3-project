@@ -212,6 +212,7 @@
     box-shadow: rgba(0, 0, 0, 0.566) 3px 3px;
 }
 
+
 .formInput2{
     height: 600px;
     width: 400px;
@@ -224,6 +225,34 @@
     border-color: rgba(128, 128, 128, 0.494);
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.566) 3px 3px;
+}
+
+.formInput3{
+    height: 600px;
+    width: 400px;
+    display: grid;
+    border: 2px solid;
+    grid-column: 2 / 3;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    border-color: rgba(128, 128, 128, 0.494);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.566) 3px 3px;
+}
+
+.newPostImage{
+    border: 5px solid;
+    border-radius: 5px;
+    margin-left: 20%;
+    background-color: rgb(175, 175, 175);
+}
+
+.imgText{
+    text-align: center;
+    margin: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(101, 101, 101);
 }
 
 .text{
