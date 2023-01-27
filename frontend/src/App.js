@@ -1,6 +1,5 @@
 import './App.css';
 import Posts from './Components/Posts'
-import Post from './Components/Post'
 import Login from './Components/Login'
 import NewPost from './Components/NewPost'
 import Navbar from './Components/Navbar';
@@ -29,7 +28,7 @@ function App() {
       </header>
       {user ? 
         <div>
-          <Navbar setPage={setPage}/>
+          <Navbar setPage={setPage} user={user}/>
           <Routes>
               <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/>
               <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
@@ -44,7 +43,6 @@ function App() {
             <Route path="/login" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
             <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
             <Route path="*" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
-            {/* <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/> */}
             <Route path="*" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
         </Routes>
       }

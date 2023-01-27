@@ -12,7 +12,7 @@ function DeletePost({post, setPosts}){
     }
 
     return(
-        <div>
+        <div className="deleteButton">
             <button onClick={handleClick}>Remove Post</button>
         </div>
     )

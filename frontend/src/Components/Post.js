@@ -1,10 +1,12 @@
 import Comments from './Comments'
-import React, { useState, useContext } from 'react'
-// import { AppContext } from "../App"
+import React, { useState } from 'react'
+import DeletePost from "./DeletePost"
+import UpdatePost from "./UpdatePost"
 
 function Post({post, setComments, setPosts, user}){
     const [comment, setComment] = useState(false)
     const [heart, setHeart] = useState(true)
+    const [more, setMore] =useState(false)
 
 
     const handleClick = (post) => {
@@ -52,7 +54,21 @@ function Post({post, setComments, setPosts, user}){
     return(
         
         <div className="post">
-            <h2 className="text">{post.username}</h2>
+            <h2 className="text">{post.username}{
+            window.location.href === "http://localhost:3000/account" ?
+                <button className="more" onClick={() => setMore(current => !current)}> o o o 
+                    {more ?
+                        <div className='moreBox'>
+                            <DeletePost post={post} setPosts={setPosts}/>
+                            <UpdatePost post={post} setPosts={setPosts}/>
+                        </div>
+                        :
+                        null
+                    }
+                    </button>
+                :
+                null
+            }</h2>
             <img className="image" src={post.image} alt="post"/>
             <p className='likes'>
                 <button className="heart" onClick={() => handleClick(post)} value={heart}>{heart ? '🖤' : '💗'}</button>
