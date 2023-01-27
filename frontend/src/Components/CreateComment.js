@@ -48,12 +48,13 @@ function CreateComment({post, user, setPosts}){
     }
 
     return (
-        <div>
+        <div className="comBox">
             <form className='input' onSubmit={handleComment}> 
                 <input className='commentInput' name="comment" type="comment" placeholder='Add a comment' onChange={handleChange} value={sendCom.comment}/>
                 <button className='inputButton' type="submit" onClick={CreateComment}> send </button>
             </form>
         </div>
+ 
     )
 }
 

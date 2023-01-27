@@ -13,21 +13,23 @@
 }
 
 .dis {
-    /* grid-row: 2 / 3; */
     position: absolute;
     margin-left: 50%;
     left: -200px;
     margin-top: 80px;
-    }
+    grid-gap: 150px;
+    display: grid;
+}
 
 .post {
     width: 400px;
-    height: 700px;
+    height: 600px;
     background-color: rgb(254, 246, 236);
-    border: 2px solid;
-    border-color: rgba(0, 0, 0, 0.374);
-    box-shadow: black 1px 1px;
+    border: 5px solid;
+    border-color: rgb(0, 0, 0);
+    /* box-shadow: black 1px 1px; */
     display: grid;
+    border-radius: 7px;
 }
 
 .posted{
@@ -43,15 +45,21 @@
 }
 
 .image {
+    /* position: absolute; */
+    top: 50px;
     width: 400px;
-    height: 500px;
+    height: 450px;
     max-width: 100%;
     max-height: 100%;
     border: 1px solid black;
+    border-top: 5px solid;
+    border-bottom: 5px solid;
 }
 
 .heart { 
     position: relative; 
+    border: 0;
+    background-color: transparent;
 } 
 
 .comments{
@@ -92,34 +100,36 @@
 .likes {
     font-size: medium;
     text-align: left;
-    padding-left: 5px;
+    padding-left: 0px;
     padding-right: 5px;
+    /* position: absolute;
+    padding-top:572px; */
 }
 
 .commentButton{
     background-color: transparent;
-    /* border-color: transparent; */
+    border-color: transparent;
+    /* position: absolute; */
+    /* top: 0; */
 }
 
-.comOutline{
+.comOut{
     position: absolute;
-    height: 9%;
-    width: 100%;
-    border: 2px solid;
+    height: 550px;
+    width: 400px;
+    border-radius: 20px;
     background-color: black;
-    border-radius: 10px;
 }
-
 
 .commentSection{
     position: absolute;
     overflow: scroll;
-    height: 90%;
-    width: 100%;
+    height: 500px;
+    width: 400px;
     border: 2px solid;
-    /* left: -50px; */
     background-color: black;
     border-radius: 10px;
+    /* margin-top: -150%; */
 }
 .commentSection::-webkit-scrollbar {
     display: none;
@@ -128,25 +138,41 @@
 .comTitle{
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+    display: grid;
+    border-radius: 20px;
 }
+
+.X{
+    position: absolute;
+    right: 15px;
+    top: 7px;
+    background-color: transparent;
+    color: white
+}
+
+
 
 .commentText{
     text-align: left;
-
 }
 
+
+.comBox{
+    display: grid;
+}
 .commentInput{
     position: absolute;
     bottom: 0;
     height: 30px;
-    width: 80%;
+    width: 70%;
     background-color: black;
     border-width:0px;
     border:none;
     border-radius: 20px;
     color: white;
     padding-left: 5px;
+    margin-left: 1%;
+    margin-bottom: 1%;
 }
 
 .inputButton{
@@ -158,6 +184,9 @@
     background-color: black;
     color: rgb(39, 179, 244);
     font-weight: bold;
+    border-radius: 20px;
+    margin-right: 1%;
+    margin-bottom: 2%;
 }
 
 .input{
@@ -199,8 +228,8 @@
 
 .text{
     text-align: left;
-    padding-left: 5px;
-    padding-top: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -208,6 +237,7 @@
     height: 40px;
     width: 100%;
     border-radius: 10px;
+    display: grid;
 }
 
 .logButton{
@@ -216,4 +246,21 @@
     border-radius: 10px;
     background-color: rgb(210, 208, 208);
     border-color: transparent;
+}
+
+.site-title{
+    /* background-color: aquamarine; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.site{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#navbar{
+    /* background-color: aqua; */
+    height: 60px;
+    border-color: black;
+    border:5px solid black;
+    background-color: rgb(30, 26, 26);
 }
