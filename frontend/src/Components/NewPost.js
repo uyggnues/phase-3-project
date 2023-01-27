@@ -53,9 +53,7 @@ function NewPost({user, setPosts}){
             <form className="formInput3" onSubmit={handleSubmit}>
             <div className="newPostImage">
                 {validator.isURL(newPost.image) ? <img className="image" src={newPost.image} alt="Invalid"/> : <p className="imgText">
-                Place
-                Image_url
-                here
+                Place Image_url here
                 </p>}
             </div>
                 <label className="text" >Caption</label>
