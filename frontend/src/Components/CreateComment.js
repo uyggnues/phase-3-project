@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 function CreateComment({post, user, setPosts}){
     const [sendCom, setSendCom] = useState({
@@ -24,7 +24,7 @@ function CreateComment({post, user, setPosts}){
 
     const handleComment = (e) => {
         e.preventDefault()
-
+        debugger
         fetch(`http://localhost:9393/comments`,{
           method: "POST",
           headers: {
@@ -37,15 +37,13 @@ function CreateComment({post, user, setPosts}){
             setPosts(current => {
                 const postId = current.findIndex(ele => ele.id === post.id)
                 const newPost = {...current[postId]}.comments.push(sendCom.comment)
+                debugger
                 return [...current.slice(0, postId), newPost, ...current.slice(postId + 1)]
             })
-            debugger
         })
 
         setSendCom({
             comment: "",
-            username: user.username,
-            post_id: post.id,
         })
     }
 
