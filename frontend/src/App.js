@@ -35,10 +35,10 @@ function App() {
           <Routes>
               <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/>
               <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
-              <Route path="/posts" element={<Posts posts={posts} setPosts={setPosts}/>}/>
-              <Route path="/newPost" element={<NewPost/>}/>
+              <Route path="/posts" element={<Posts posts={posts} setPosts={setPosts} user={user}/>}/>
+              <Route path="/newPost" element={<NewPost user={user} setPosts={setPosts}/>}/>
               <Route path="/account" element={<Account/>}/>
-              <Route path="*" element={<Posts posts={posts} setPosts={setPosts}/>}/>
+              <Route path="*" element={<Posts posts={posts} setPosts={setPosts} user={user}/>}/>
           </Routes>
         </div>
           : 
@@ -47,6 +47,7 @@ function App() {
             <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
             <Route path="*" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
             {/* <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/> */}
+            <Route path="*" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
         </Routes>
       }
     </div>

@@ -1,7 +1,12 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
-function NewPost({}){
+function NewPost({user, setPosts}){
+    const navigate = useNavigate()
+
     const [newPost, setNewPost] = useState({
+        user_id: user.id,
+        username: user.username,
         caption: "",
         date: new Date(),
         likes: 0,
@@ -12,7 +17,7 @@ function NewPost({}){
     const handleChange = (e) => {
         setNewPost({...newPost, [e.target.name]:e.target.value})
     }
-
+   
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -24,27 +29,34 @@ function NewPost({}){
             body:JSON.stringify(newPost)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            // debugger
+            setPosts(current => {
+                // debugger
+                const P = {...data, comments: []} 
+                return[P, ...current]
+            })
+        })
         .catch((error) => {
             console.log(error)
-          })
+        })
 
-          setNewPost({
+        setNewPost({
             caption: "",
-            date: new Date(),
-            likes: 0,
             image: "",
         });
+        navigate('/posts');
+        
     }
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label for="caption">Caption</label>
-                <input type="text" name="caption" onChange={handleChange} value={newPost.caption}/>
-                <label for="image">Image</label>
-                <input type="text" name="image" onChange={handleChange} value={newPost.image}/>
-                <input type="submit"/>
+        <div className="form">
+            <form className="formInput" onSubmit={handleSubmit}>
+                <label className="text" >Caption</label>
+                <input className="inputs"type="text" name="caption" onChange={handleChange} value={newPost.caption} placeholder="caption"/>
+                <label className="text">Image_url</label>
+                <input className="inputs"type="text" name="image" onChange={handleChange} value={newPost.image} placeholder="image_url"/>
+                <input className="logButton" type="submit"/>
             </form>
         </div>
     )

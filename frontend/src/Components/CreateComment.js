@@ -1,9 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-function CreateComment({post, setPosts}){
+function CreateComment({post, user, setPosts}){
     const [sendCom, setSendCom] = useState({
-        comment: ""
+        comment: "",
+        username: user.username,
+        post_id: post.id,
     })
+
+    // useEffect(() => {
+    //     setSendCom({
+    //         comment: "",
+    //         username: user.username,
+    //         post_id: post.id,
+    //     })
+    // }, []);
+
 
     const handleChange = (e) => {
         setSendCom((currentUser) => (
@@ -14,7 +25,7 @@ function CreateComment({post, setPosts}){
     const handleComment = (e) => {
         e.preventDefault()
 
-        fetch("http://localhost:9393/comments",{
+        fetch(`http://localhost:9393/comments`,{
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -22,25 +33,27 @@ function CreateComment({post, setPosts}){
           body: JSON.stringify(sendCom)
         })
         .then(resp => resp.json())
-        .then(data => {
-            debugger
+        .then(post => {
             setPosts(current => {
                 const postId = current.findIndex(ele => ele.id === post.id)
-                return [...current.slice(0, postId), "", ...current.slice(postId + 1)]
+                const newPost = {...current[postId]}.comments.push(sendCom.comment)
+                return [...current.slice(0, postId), newPost, ...current.slice(postId + 1)]
             })
+            debugger
         })
 
         setSendCom({
-            comment: ""
+            comment: "",
+            username: user.username,
+            post_id: post.id,
         })
     }
 
-
     return (
         <div className="comBox">
-            <form className='input' onSubmit={(e) => handleComment(e, post)}> 
+            <form className='input' onSubmit={handleComment}> 
                 <input className='commentInput' name="comment" type="comment" placeholder='Add a comment' onChange={handleChange} value={sendCom.comment}/>
-                <button className='inputButton' type="submit"> send </button>
+                <button className='inputButton' type="submit" onClick={CreateComment}> send </button>
             </form>
         </div>
  
