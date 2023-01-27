@@ -24,7 +24,7 @@ function CreateComment({post, user, setPosts}){
 
     const handleComment = (e) => {
         e.preventDefault()
-        debugger
+        // debugger
         fetch(`http://localhost:9393/comments`,{
           method: "POST",
           headers: {
@@ -37,7 +37,7 @@ function CreateComment({post, user, setPosts}){
             setPosts(current => {
                 const postId = current.findIndex(ele => ele.id === post.id)
                 const newPost = {...current[postId]}.comments.push(sendCom.comment)
-                debugger
+                // debugger
                 return [...current.slice(0, postId), newPost, ...current.slice(postId + 1)]
             })
         })
