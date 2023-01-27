@@ -56,16 +56,17 @@ function Post({post, setComments, setPosts, user}){
         <div className="post">
             <h2 className="text">{post.username}{
             window.location.href === "http://localhost:3000/account" ?
-                <button className="more" onClick={() => setMore(current => !current)}> o o o 
-                    {more ?
-                        <div className='moreBox'>
-                            <DeletePost post={post} setPosts={setPosts}/>
-                            <UpdatePost post={post} setPosts={setPosts}/>
-                        </div>
-                        :
-                        null
-                    }
-                    </button>
+            <>
+                <button className="more" onClick={() => setMore(current => !current)}> o o o </button>
+                {more ?
+                    <div className='moreBox'>
+                        <DeletePost post={post} setPosts={setPosts}/>
+                        <UpdatePost post={post} setPosts={setPosts}/>
+                    </div>
+                    :
+                    null
+                }
+            </>
                 :
                 null
             }</h2>
