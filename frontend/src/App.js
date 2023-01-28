@@ -1,6 +1,5 @@
 import './App.css';
 import Posts from './Components/Posts'
-import Post from './Components/Post'
 import Login from './Components/Login'
 import NewPost from './Components/NewPost'
 import Navbar from './Components/Navbar';
@@ -9,6 +8,9 @@ import { Routes, Route } from "react-router-dom";
 import SignUp from './Components/SignUp';
 import Logout from './Components/Logout';
 import Account from './Components/Account'
+import Cursor from './Components/Cursor';
+
+
 
 function App() {
   const [user, setUser] = useState(JSON.parse(window.localStorage.getItem("user")));  
@@ -16,6 +18,13 @@ function App() {
   const [page, setPage] = useState('/login');
   //const [toggleAuth, setToggleAuth] = useState(false)
   const [posts, setPosts] = useState([]);
+  const [emoji, setEmoji] = useState(false)
+  const [clock, setClock] = useState(false)
+  const [fairy, setFairy] = useState(false)
+  const [dot, setDot] = useState(false)
+  const [rainbow, setRainbow] = useState(false)
+
+  
 
   useEffect(() => {
   fetch("http://localhost:9393/posts")
@@ -29,7 +38,8 @@ function App() {
       </header>
       {user ? 
         <div>
-          <Navbar setPage={setPage}/>
+          <Navbar setPage={setPage} user={user}/>
+          <Cursor/>
           <Routes>
               <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/>
               <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
@@ -44,7 +54,6 @@ function App() {
             <Route path="/login" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
             <Route path="/signup" element={<SignUp setPage={setPage}/>}/>
             <Route path="*" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
-            {/* <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/> */}
             <Route path="*" element={<Login setUser={setUser} setMessage={setMessage} setPage={setPage}/>}/>
         </Routes>
       }

@@ -19,6 +19,13 @@ class PostsController < ApplicationController
     end
 
     # UPDATE
+    patch '/posts/:id' do
+        binding.pry
+        post = Post.find(params[:id])
+        post.update(caption: params[:caption])
+        post.to_json
+    end
+
     patch '/posts/:id/increment' do
         # binding.pry
         post = Post.find(params[:id])

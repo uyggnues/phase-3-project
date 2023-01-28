@@ -12,8 +12,8 @@ function DeletePost({post, setPosts}){
     }
 
     return(
-        <div>
-            <button onClick={handleClick}>Remove Post</button>
+        <div className="deleteButton">
+            <button onClick={handleClick} className="logButton">Remove Post</button>
         </div>
     )
 }
