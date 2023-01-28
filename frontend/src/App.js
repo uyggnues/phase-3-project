@@ -39,7 +39,7 @@ function App() {
       {user ? 
         <div>
           <Navbar setPage={setPage} user={user}/>
-          <Cursor/>
+          <Cursor />
           <Routes>
               <Route path="/logout" element={<Logout user={user} setUser={setUser} setPage={setPage}/>}/>
               <Route path="/signup" element={<SignUp setPage={setPage}/>}/>

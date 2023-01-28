@@ -1,10 +1,10 @@
 import React from 'react';
 import {useState} from 'react'
-import { clockCursor, emojiCursor, fairyDustCursor, followingDotCursor, rainbowCursor } from "cursor-effects";
+import { clockCursor, emojiCursor, fairyDustCursor, followingDotCursor, rainbowCursor, trailingCursor } from "cursor-effects";
 const Cursor = () => {
 
 
-    const cursors = ['defaultCursor', 'emojiCursor', 'clockCursor', 'fairyDustCursor', 'followingDotCursor', 'rainbowCursor']
+    const cursors = ['origin', 'emoji', 'clock', 'fairy', 'Dot', 'color', 'trail']
 
     const mappedCursors = cursors.map((cursor) => {
             return <button className="cursorButton" key={cursor} onClick={() => switchCursor(cursor)}>{cursor}</button>
@@ -20,20 +20,23 @@ const Cursor = () => {
         }
         setCursor(cursor)
         switch (cursor) {
-            case 'emojiCursor':
+            case 'emoji':
                 setCursorEffect(new emojiCursor({ emoji: ["😀", "😂", "😆", "😊"] }))
             break
-            case 'clockCursor':
+            case 'clock':
                 setCursorEffect(new clockCursor({ time: Date.today}))
             break
-            case 'fairyDustCursor':
+            case 'fairy':
                 setCursorEffect(new fairyDustCursor({ height: 10}))
             break
-            case 'followingDotCursor':
+            case 'Dot':
                 setCursorEffect(new followingDotCursor({ height: 10}))
             break
-            case 'rainbowCursor':
+            case 'color':
                 setCursorEffect(new rainbowCursor({colors: ["red","orange", "yellow", "green", "blue", "violet", "purple"]},{length: 10}))
+            break
+            case 'trail':
+                setCursorEffect(new trailingCursor({length: 10}))
             break
             default:
                 setCursorEffect("")
