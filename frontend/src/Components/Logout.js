@@ -9,7 +9,7 @@ function Logout({user, setUser, setPage}){
       method: 'DELETE',
     })
     .then(res => {
-      console.log(res)
+      // console.log(res)
       setUser(null)
       window.localStorage.setItem("user", JSON.stringify(null))
       navigate('/login')

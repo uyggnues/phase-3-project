@@ -27,14 +27,14 @@ class PostsController < ApplicationController
     end
 
     patch '/posts/:id/increment' do
-        binding.pry
+        # binding.pry
         post = Post.find(params[:id])
         post.update(likes: post.likes + 1)
         post.to_json(include: [:comments])
     end
 
     patch '/posts/:id/decrement' do
-        binding.pry
+        # binding.pry
         post = Post.find(params[:id])
         post.update(likes: post.likes - 1)
         post.to_json(include: [:comments])
