@@ -5,7 +5,8 @@ The backend part of Snap Shot is responsible for all the information you give ou
 the backend part is will have all the CRUD methods and authentication that allows you to fetch from the frontend, and basically anything interactive and dynamic that goes on in the frontend is supported by the backend to persist and make the functionality work.
 
 ## Table Model
-![image](/root/development/code/phase-3/phase-3-project/backend/img.png)
+![Screenshot (6)](https://user-images.githubusercontent.com/113069529/215564615-e68361c9-7d66-4583-a3bd-a2ae5be11267.png)
+
 ## installation
 * First Fork and clone repo to local machine.
 
