@@ -15,7 +15,7 @@ function Post({post, setComments, setPosts, user}){
             // post.likes += 1
             fetch(`http://localhost:9393/posts/${post.id}/increment`, {
                 method: "PATCH",
-                header: {
+                headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(post)
