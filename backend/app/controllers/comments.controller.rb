@@ -12,11 +12,10 @@ class CommentsController < ApplicationController
         comment = params[:comment]
         post = Post.find_by(id: params[:post_id])
         user = User.find_by(username: params[:username])
-        # binding.pry
         if post && user 
             Comment.create(comment: comment, post: post, user: user, username: params[:username])
             halt 200, post.to_json(include: [:comments])
-        else 
+        else
             halt 400, "Post or User not Found".to_json
         end
     end
