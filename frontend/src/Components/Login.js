@@ -9,25 +9,30 @@ function Login({setUser, setMessage, setPage}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("http://localhost:9393/login",{
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(user)
-        })
-        .then(resp => {
-          if (resp.ok) {
-            resp.json().then(userObj => {
-              setUser(userObj.user)
-              setMessage("User successfully logged in!")
-              window.localStorage.setItem("user", JSON.stringify(userObj.user))
-              window.localStorage.setItem("isLoggedIn", true)
-            })
-          } else {
-            resp.json().then(messageObj => setMessage(messageObj.message))
-          }
-        })
+        if (user.username && user.password) {
+
+          fetch("http://localhost:9393/login",{
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+          })
+          .then(resp => {
+            if (resp.ok) {
+              resp.json().then(userObj => {
+                setUser(userObj.user)
+                setMessage("User successfully logged in!")
+                window.localStorage.setItem("user", JSON.stringify(userObj.user))
+                window.localStorage.setItem("isLoggedIn", true)
+              })
+            } else {
+              resp.json().then(messageObj => setMessage(messageObj.message))
+            }
+          })
+        } else {
+          alert("all fields must be filled out")
+        }
     }
 
     const handleChange = (e) => {
