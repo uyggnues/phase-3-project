@@ -16,7 +16,7 @@ function UpdatePost({post, setPosts}){
         console.log(JSON.stringify(update))
         fetch(`http://localhost:9393/posts/${post.id}`, {
             method: 'PATCH',
-            header: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(update)

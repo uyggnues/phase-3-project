@@ -3,8 +3,8 @@ import { useState } from "react"
 function CreateComment({post, user, setPosts}){
     const [sendCom, setSendCom] = useState({
         comment: "",
-        username: user.username,
-        post_id: post.id,
+        username: user?.username,
+        post_id: post?.id,
     })
 
     // useEffect(() => {

@@ -28,12 +28,11 @@ function NewPost({user, setPosts}){
             body:JSON.stringify(newPost)
         })
         .then(res => res.json())
-        .then(data => {
+        .then(post => {
             // debugger
             setPosts(current => {
                 // debugger
-                const P = {...data, comments: []} 
-                return[P, ...current]
+                return[post, ...current]
             })
         })
         .catch((error) => {
