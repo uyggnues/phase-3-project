@@ -20,19 +20,23 @@ function SignUp({setUser, toggleAuth, setToggleAuth, setMessage, setPage}) {
             password: newUser.Password,
             email: newUser.Email
         }
+        if (addNewUser.firstName && addNewUser.lastName && addNewUser.username && addNewUser.password && addNewUser.email && addNewUser.password === newUser.ConfirmPassword) {
 
-        fetch("http://127.0.0.1:9393/users", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify(addNewUser)
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch((error) => {
-            console.log(error)
-          })
+            fetch("http://127.0.0.1:9393/users", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(addNewUser)
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch((error) => {
+                console.log(error)
+            })
+        } else {
+            addNewUser.password === newUser.ConfirmPassword ? alert("all fields must be filled out") : alert("password does not match confirm password")
+        }
     }
 
     const handleChange = (e) => {

@@ -19,25 +19,29 @@ function NewPost({user, setPosts}){
    
     const handleSubmit = (e) => {
         e.preventDefault()
+        if (newPost.image) {
 
-        fetch("http://127.0.0.1:9393/posts", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify(newPost)
-        })
-        .then(res => res.json())
-        .then(post => {
-            // debugger
-            setPosts(current => {
-                // debugger
-                return[post, ...current]
+            fetch("http://127.0.0.1:9393/posts", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(newPost)
             })
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+            .then(res => res.json())
+            .then(post => {
+                // debugger
+                setPosts(current => {
+                    // debugger
+                    return[post, ...current]
+                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        } else {
+            alert("image_url must be filled out")
+        }
 
         setNewPost({
             caption: "",
