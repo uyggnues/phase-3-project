@@ -9,11 +9,15 @@ This is a local hub for posting posts and commenting on either your posts or som
 ## Set up
 
 * First Fork and clone repo to local machine.
-
 * Second you will need to cd into the frontend and run
+```
+npm install 
+```
+* Then run
 ```
 npm start
 ```
+to start your server
 
 ## Usage
 

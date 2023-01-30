@@ -15,10 +15,22 @@ bundle install
 ```
 to start up the server
 
-* run 
+* then in your terminal that is cd into backend run
+```
+bundle exec rake db:migrate
+```
+to migrate your models 
+* after that you will also run
+```
+bundle exec rake db:seed
+```
+to seed your faker data 
+
+* Finally run 
 ```
 shotgun
 ```
+to start your backend APIs
 
 ## Collaborating
 
