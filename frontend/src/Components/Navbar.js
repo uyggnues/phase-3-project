@@ -6,6 +6,7 @@ function Navbar({setPage}){
                 <li className="site" onClick={()=>{setPage("/newpost")}}><a href="newpost">Create Post</a></li>
                 <li className="site" onClick={()=>{setPage("/logout")}}><a href="logout">Logout</a></li>
                 <li className="site" onClick={()=>{setPage("/account")}}><a href="account">Account</a></li>
+                
             </ul>
         </nav>
     )

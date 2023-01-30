@@ -16,16 +16,13 @@ function Post({post, setComments, setPosts, user}){
                 header: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({post})
+                body: JSON.stringify(post)
             })
         .then(res => res.json())
-        .then(data => {
+        .then(post => {
             setPosts((current) => {
                 const postId = current.findIndex(ele => ele.id === post.id)
-                // const newArray = [...current]
-                // newArray[postId] = data
-                // return newArray
-                return [...current.slice(0, postId), data, ...current.slice(postId + 1)]
+                return [...current.slice(0, postId), post, ...current.slice(postId + 1)]
             })
         })
         // debugger
@@ -40,10 +37,10 @@ function Post({post, setComments, setPosts, user}){
                 body: JSON.stringify({post})
             })
         .then(res => res.json())
-        .then(data => {
+        .then(post => {
             setPosts((current) => {
                 const postId = current.findIndex(ele => ele.id === post.id)
-                return [...current.slice(0, postId), data, ...current.slice(postId + 1)]
+                return [...current.slice(0, postId), post, ...current.slice(postId + 1)]
             })
         })
         }
