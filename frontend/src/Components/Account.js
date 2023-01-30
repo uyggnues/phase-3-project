@@ -1,6 +1,6 @@
 // import DeletePost from "./DeletePost"
 import Post from "./Post"
-import UpdatePost from "./UpdatePost"
+
 
 function Account({posts, user, setPosts}){
     const userPosts = posts.filter(post => post.user_id === user.id)

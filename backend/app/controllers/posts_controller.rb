@@ -20,21 +20,21 @@ class PostsController < ApplicationController
 
     # UPDATE
     patch '/posts/:id' do
-        binding.pry
-        post = Post.find(params[:post][:id])
+        # binding.pry
+        post = Post.find_by(id: params[:id])
         post.update(caption: params[:caption])
         post.to_json(include: [:comments])
     end
 
     patch '/posts/:id/increment' do
-        binding.pry
+        # binding.pry
         post = Post.find(params[:id])
         post.update(likes: post.likes + 1)
         post.to_json(include: [:comments])
     end
 
     patch '/posts/:id/decrement' do
-        binding.pry
+        # binding.pry
         post = Post.find(params[:id])
         post.update(likes: post.likes - 1)
         post.to_json(include: [:comments])

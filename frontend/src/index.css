@@ -243,7 +243,7 @@
 }
 
 .image {
-    width: 390px;
+    width: 391px;
     height: 480px;
     /* max-width: 100%;
     max-height: 100%; */
@@ -306,6 +306,10 @@
     border-radius: 20px;
 }
 
+.more2:hover{
+    color: grey;
+}
+
 .moreBox2{
     height: 150px;
     width: 150px;
@@ -361,6 +365,11 @@
 
 .site{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 5px;
+}
+
+.site:active{
+    color: grey;
 }
 
 #navbar{
@@ -377,6 +386,14 @@
     margin: 5px;
     height: 50px;
     width: 50px;
+}
+
+.cursorButton:hover {
+    background-color: aqua;
+}
+.cursorButton:active {
+    color: rgb(109, 109, 109);
+    background-color: rgb(130, 255, 255);
 }
 
 .cursor{
