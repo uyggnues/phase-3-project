@@ -18,11 +18,6 @@ function App() {
   const [page, setPage] = useState('/login');
   //const [toggleAuth, setToggleAuth] = useState(false)
   const [posts, setPosts] = useState([]);
-  const [emoji, setEmoji] = useState(false)
-  const [clock, setClock] = useState(false)
-  const [fairy, setFairy] = useState(false)
-  const [dot, setDot] = useState(false)
-  const [rainbow, setRainbow] = useState(false)
 
   
 

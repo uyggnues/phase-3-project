@@ -12,11 +12,11 @@ function UpdatePost({post, setPosts}){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(update)
-        console.log(JSON.stringify(update))
+        // console.log(update)
+        // console.log(JSON.stringify(update))
         fetch(`http://localhost:9393/posts/${post.id}`, {
             method: 'PATCH',
-            header: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(update)
@@ -24,6 +24,7 @@ function UpdatePost({post, setPosts}){
         .then(res => res.json())
         .then(post =>             
             setPosts(current => {
+                // debugger
             const postId = current.findIndex(ele => ele.id === post.id)
             return [...current.slice(0, postId), post, ...current.slice(postId + 1)]
 
