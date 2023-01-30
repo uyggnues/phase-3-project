@@ -1,4 +1,4 @@
-import DeletePost from "./DeletePost"
+// import DeletePost from "./DeletePost"
 import Post from "./Post"
 import UpdatePost from "./UpdatePost"
 
@@ -7,10 +7,9 @@ function Account({posts, user, setPosts}){
 
     const display = userPosts.map((post) => {
         return (
-            <div>
-                <Post key={`account-${post.id}`} post={post} setPosts={setPosts} user={user}/>  
-                <DeletePost key={`delete-${post.id}`} post={post} setPosts={setPosts}/>   
-                <UpdatePost key={`update-${post.id}`} post={post} setPosts={setPosts}/>            
+            <div key={post.id}>
+                <Post key={`post-${post.id}`} post={post} setPosts={setPosts} user={user}/>
+                {/* <DeletePost key={`delete-${post.id}`} post={post} setPosts={setPosts}/> */}
             </div>
         )
     })
@@ -18,7 +17,7 @@ function Account({posts, user, setPosts}){
     return(
         
     <div className="posts">
-        <div className="header" >Snap Shot</div>
+        <div className="header">{user.username}'s Posts</div>
         <div className="dis">
             {display}
         </div>

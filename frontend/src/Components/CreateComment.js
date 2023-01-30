@@ -15,7 +15,7 @@ function CreateComment({post, user, setPosts}){
     //     })
     // }, []);
 
-
+ 
     const handleChange = (e) => {
         setSendCom((currentUser) => (
             {...currentUser, [e.target.name]: e.target.value}
@@ -32,28 +32,29 @@ function CreateComment({post, user, setPosts}){
           },
           body: JSON.stringify(sendCom)
         })
+        // .then(resp => resp.json())
         .then(resp => {
-            if(resp.status === 200){
+            if (resp.status === 200) {
                 resp.json()
                 .then(post => {
-                
                     setPosts(current => {
                         const postId = current.findIndex(ele => ele.id === post.id)
-                        debugger
+                        // const newPost = {...current[postId]} //, comments: [...]}.comments.push(sendCom.comment)
+                        // debugger
                         return [...current.slice(0, postId), post, ...current.slice(postId + 1)]
                     })
-
                     setSendCom({
                         comment: "",
                         username: user.username,
                         post_id: post.id,
                     })
                 })
-            }else{
+            } else {
                 resp.json()
                 .then(msg => alert(msg))
             }
         })
+
     }
 
     return (

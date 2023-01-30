@@ -2,8 +2,8 @@ import Comment from './Comment'
 import CreateComment from './CreateComment'
 
 function Comments({comments, post, user, setPosts, comment, setComment}){
-    const display = comments.map((comment) => {
-        return <Comment key={`post-${post.id}-comment-${comment.id}`} comment={comment}/>
+    const display = comments.map((c) => {
+        return <Comment key={`post-${post.id}-comment-${c.id}`} comment={c}/>
     })
 
     return(
