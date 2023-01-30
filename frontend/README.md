@@ -10,18 +10,7 @@ This is a local hub for posting posts and commenting on either your posts or som
 
 * First Fork and clone repo to local machine.
 
-* Second you will need to cd into the backend file and run 
-```
-bundle install 
-```
-to start up the server
-
-* run 
-```
-shotgun
-```
-
-* In a new terminal cd out of backend and into the frontend and run
+* Second you will need to cd into the frontend and run
 ```
 npm start
 ```
